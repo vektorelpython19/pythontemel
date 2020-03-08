@@ -63,4 +63,5 @@ else:
     dosya.writelines(liste)
     dosya.close()
 
-Calistir()
+# if __name__ == "__main__":
+#     Calistir()
