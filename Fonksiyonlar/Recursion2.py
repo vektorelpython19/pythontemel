@@ -1,5 +1,5 @@
 #recursion
-def Fibanocci(n):
+def fibanocci1(n):
     if n<0:
         print("Geçersiz Giriş")
     elif n == 1:
@@ -7,20 +7,20 @@ def Fibanocci(n):
     elif n == 2:
         return 1
     else:
-        return Fibanocci(n-1)+Fibanocci(n-2)
+        return fibanocci1(n-1)+fibanocci1(n-2)
 #dynamic
 FibArray = [0,1]
-def fibanocci(n):
+def fibanocci2(n):
     if n<0:
         print("Geçersiz Giriş")
     elif n<=(len(FibArray)):
         return FibArray[n-1]
     else:
-        temp_fib = fibanocci(n-1)+fibanocci(n-2)
+        temp_fib = fibanocci2(n-1)+fibanocci2(n-2)
         FibArray.append(temp_fib)
         return temp_fib
 #space optimized
-def fibanocci(n):
+def fibanocci3(n):
     a = 0
     b = 1
     if n<0:
@@ -34,3 +34,14 @@ def fibanocci(n):
             c=a+b
             a,b=b,c
         return b
+
+def islemZaman(fonk,param):
+    import time
+    baslangic = time.time()
+    print(fonk(param))
+    simdi = time.time() - baslangic
+    print(round(simdi,4))
+n = 25
+islemZaman(fibanocci1,n)
+islemZaman(fibanocci2,n)
+islemZaman(fibanocci3,n)
