@@ -8,6 +8,7 @@ def fibanocci1(n):
         return 1
     else:
         return fibanocci1(n-1)+fibanocci1(n-2)
+# fibanocci1(2)
 #dynamic
 FibArray = [0,1]
 def fibanocci2(n):
@@ -19,6 +20,7 @@ def fibanocci2(n):
         temp_fib = fibanocci2(n-1)+fibanocci2(n-2)
         FibArray.append(temp_fib)
         return temp_fib
+fibanocci2(9)
 #space optimized
 def fibanocci3(n):
     a = 0
@@ -41,7 +43,7 @@ def islemZaman(fonk,param):
     print(fonk(param))
     simdi = time.time() - baslangic
     print(round(simdi,4))
-n = 25
-islemZaman(fibanocci1,n)
-islemZaman(fibanocci2,n)
-islemZaman(fibanocci3,n)
+# n = 40
+# # islemZaman(fibanocci1,n)
+# islemZaman(fibanocci2,n)
+# # islemZaman(fibanocci3,n)
