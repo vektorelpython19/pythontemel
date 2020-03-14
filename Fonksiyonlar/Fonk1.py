@@ -5,7 +5,7 @@ def DosyaAc(adres="defter.csv"):
     else:
         dosya = open(adres,"w+",encoding="utf-8")
     return dosya
-
+   
 def GirisAl(*args):
     kayit = ""
     for item in args:
