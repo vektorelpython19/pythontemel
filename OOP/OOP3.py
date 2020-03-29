@@ -39,7 +39,17 @@ class MarvelHero:
     def yetenekKullan(self,rakip):
         print(self.isim,self.yetenek,"kullandı")
 
+    def Ofans(self):
+        import random as rnd
+        liste = [self.vurus1,self.vurus2,self.vurus3]
+        return rnd.choice(liste)()
     
+    def Defans(self,etki):
+        import random as rnd
+        DefansListe = [self.savunma,self.darbe]
+        return rnd.choice(DefansListe)(etki)
+
+
     def durum(self):
         print(self.isim,self.saglik)
 
