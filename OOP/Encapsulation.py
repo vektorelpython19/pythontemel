@@ -1,21 +1,34 @@
 class A:
     def __init__(self):
         self.__gizli = 1   #encapsulation
-        
-    def gizlidegistir(self,deger):
+        self.__c = 3
+
+    @property
+    def c(self): # getter
+        return self.__c
+
+    @c.setter
+    def c(self,deger):
         if isinstance(deger,str):
             if deger.isnumeric():
-                self.__gizli = deger
+                deger = int(deger)
+                if 10<deger<20:
+                    self.__c = deger
+        else:
+            print("Değiştiremedim")
     
-    def gizliGetir(self):
-        return self.__gizli
-            
+    @c.deleter
+    def c(self):
+        self.__c = 3
+
 
 
 a = A() # instantiaon
-a.gizliGetir()
-a.gizlidegistir("2")
-a.gizliGetir()
+print(a.c)
+a.c = "15"
+print(a.c)
+del a.c
+
 
 
 # Access Modifiers

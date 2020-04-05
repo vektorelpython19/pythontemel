@@ -4,7 +4,7 @@ liste = ["1",1,2,3]
 print(len(metin))
 print(len(liste))
 # kullanıcı tanımlı fonksiyonlarda polimorfizm
-def fonk(a,b,c=0):
+def fonk(a,b,c=0): #overloading
     return a + b + c
 print(fonk(1,2))
 print(fonk(1,2,3))
@@ -49,6 +49,7 @@ for item in (A,B,C):
 
 
 #-------------------------------------------
+#overriding
 class A:
     def __init__(self):
         self.a = 2

@@ -23,18 +23,19 @@
 # Kedi()
 
 #Yekta Sökelen
-class Hayvan:
-    def __init__(self):
-        self.__hayvanlar = "Hayvan"
-        self.__ses=""
-        
+from abc import  ABC,abstractmethod
+class Hayvan(ABC):
+
+    @abstractmethod
     def sesCikar(self):
-        return self.__ses
+        pass
 
 class Horoz(Hayvan):
     def __init__(self):
         super().__init__()
         self.__ses= "Ottu"
+    def sesCikar(self):
+        return self.__ses
 
 class Tavuk(Hayvan):
     def __init__(self):
