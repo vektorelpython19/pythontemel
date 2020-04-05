@@ -8,7 +8,6 @@ class MarvelHero:
         self.aktif = 1
         self.OfansList  = [self.vurus1,self.vurus2,self.vurus3]
         self.DefansList = [self.savunma,self.darbe]
-
     def vurus1(self):
         return self.guc
     def vurus2(self):
