@@ -27,7 +27,6 @@ class MarvelHero:
 
     def Ofans(self):
         import random as rnd
-
         liste = [self.vurus1,self.vurus2,self.vurus3]
         return rnd.choice(liste)()
                     
