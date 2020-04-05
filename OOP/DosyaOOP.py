@@ -29,7 +29,8 @@ class DosyaTool:
     def kayitListe(self):
         adim = 0
         for item in self.icerik:
-            print(adim,"-",item)
+            print(adim,end="-")
+            print(*item.split(";"))
             #0 - Ali;Veli;123123
 
     def Ekleme(self):
@@ -43,7 +44,30 @@ class DosyaTool:
         self.kayitListe()
         del self.icerik[int(input("Silmek istediğiniz kaydı seçiniz"))]
 
-            
+    def Kaydet(self):
+        self.dosya.seek(0)
+        self.dosya.truncate()
+        self.dosya.writelines(self.icerik)
+        self.dosya.close()
+    
+    def Menu(self):
+        menu ="""
+        1-Ekleme
+        2-Silme
+        3-Güncelleme
+        4-Listeleme
+        5-Çıkış
+        Seçim Yapınız:
+        """
+        islem = 0
+        while 0<=islem<5:
+            islem = int(input(menu))
+            liste = [self.Ekleme,self.Silme,self.Duzeltme,self.kayitListe,]
+            liste[islem-1]()
+        else:
+            print("İyi Günler")    
+
+      
 
     def __del__(self):
         self.dosya.seek(0)
