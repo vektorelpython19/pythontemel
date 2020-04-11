@@ -48,10 +48,17 @@ class DosyaTool:
         self.dosya.seek(0)
         self.dosya.truncate()
         self.dosya.writelines(self.icerik)
+<<<<<<< HEAD:OOP/DosyaOOP.py
+        self.dosya.close()
+    
+    def Menu(self):
+        menu ="""
+=======
         self.dosya.flush()
 
     def Menu(self):
         menu = """
+>>>>>>> a16fadba757c763292ee2b073852b7109a0c6e88:OOP/Ornekler/DosyaOOP.py
         1-Ekleme
         2-Silme
         3-Güncelleme
@@ -60,6 +67,16 @@ class DosyaTool:
         Seçim Yapınız:
         """
         islem = 0
+<<<<<<< HEAD:OOP/DosyaOOP.py
+        while 0<=islem<5:
+            islem = int(input(menu))
+            liste = [self.Ekleme,self.Silme,self.Duzeltme,self.kayitListe,]
+            liste[islem-1]()
+        else:
+            print("İyi Günler")    
+
+      
+=======
         while  0<=islem< 5: 
             islem = int(input(menu))
             if islem < 5:
@@ -68,6 +85,7 @@ class DosyaTool:
         else:
             print("iyi günler")
 
+>>>>>>> a16fadba757c763292ee2b073852b7109a0c6e88:OOP/Ornekler/DosyaOOP.py
 
     def __del__(self):
         self.dosya.seek(0)
