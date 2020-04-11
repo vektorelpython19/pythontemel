@@ -1,2 +1,2 @@
 import sqlite3 as sql
-db = sql.connect("Proje/IK.sqlite")
+db = sql.connect(r"Proje\IK.sqlite")
