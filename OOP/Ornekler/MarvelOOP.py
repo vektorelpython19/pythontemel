@@ -6,8 +6,9 @@ class MarvelHero:
         self.guc = guc
         self.saglik = saglik
         self.aktif = 1
-        self.OfansList = 
-    
+        self.OfansList  = [self.vurus1,self.vurus2,self.vurus3]
+        self.DefansList = [self.savunma,self.darbe]
+
     def vurus1(self):
         return self.guc
     def vurus2(self):
@@ -64,7 +65,7 @@ class CaptainMarvel(MarvelHero):
 
 class WonderWoman(MarvelHero):
     def __init__(self):
-        super().__init__("Princess Diana","Dayaniklilik",60,1000)
+        super().__init__("WonderWoman","Dayaniklilik",60,1000)
         self.aktif = 0
   
 
