@@ -1,1 +1,1 @@
-import sqlite3 as sq1
+import sqlite3 as sql
