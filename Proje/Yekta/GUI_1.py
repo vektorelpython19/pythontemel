@@ -22,6 +22,4 @@ txt.grid(column=0,row=1)
 dugme = Button(pencere, text="Aktar", command=tiklandi2)
 dugme.grid(column=1,row=1)
 
-
-
 pencere.mainloop()
