@@ -14,6 +14,10 @@ class TelefonDefter:
         self.db = sql.connect("Proje\IK.sqlite")
         self.cur = self.db.cursor()
     
+    def girisAl(self):
+        adi = input("ADI GİRİNİZ:")
+        soyadi = input("SOYADI GİRİNİZ")
+
     def Ekleme(self):
         try:
             adi = input("Adı Giriniz:")
@@ -38,7 +42,7 @@ class TelefonDefter:
                 print(f"{tel_id}-{adi} {soyadi} {tel_no}")
         except Exception as hata:
             print("Hata Mesajı:",hata)
-
+    def Gunc
     def __del__(self):
         self.cur.close()
         self.db.commit()
