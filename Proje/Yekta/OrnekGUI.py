@@ -18,13 +18,17 @@ txtPass.grid(column=1, row=1)
 def fonkGiris():
     if txtUser.get() and txtPass.get():
         if txtUser.get() == "Yekta" and txtPass.get() == "1234":
-            print("Giris Basarili")
+            sonuc["text"] = "Giris Basarili"
         else:
-            print("Giris Basarisiz")
+            sonuc["text"] = "Giris Basarisiz"
 
 
 def temizle():
-    pass
+    txtUser.delete(0,END)
+    txtUser.insert(0,"")
+    txtPass.delete(0,END)
+    txtPass.insert(0,"")
+
 
 
 dugme1 = Button(pencere, text="Giris Yap", width=30, command=fonkGiris)
@@ -32,5 +36,8 @@ dugme1.grid(column=0, row=2)
 
 dugme1 = Button(pencere, text="Temizle", width=30, command=temizle)
 dugme1.grid(column=1, row=2)
+
+sonuc = Label(pencere,text="",width=40)
+sonuc.grid(column=0,row=3)
 
 pencere.mainloop()
