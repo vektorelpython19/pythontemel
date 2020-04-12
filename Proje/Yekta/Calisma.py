@@ -29,6 +29,8 @@ class TelefonDefter:
             sorgu = f"""INSERT 
             INTO telefonlar (adi,soyadi,tel_no) VALUES ('{adi}','{soyadi}','{tel_no}')"""
             self.cur.execute(sorgu)
+            # commit onaylama
+            # rollback gerialma
             self.db.commit()
             return True
         except Exception as hata:
@@ -52,6 +54,8 @@ class TelefonDefter:
             WHERE tel_id = {tel_id};
             """
             self.cur.execute(sorgu)
+            # commit onaylama
+            # rollback gerialma
             self.db.commit()
             return True
         except Exception as hata:
@@ -64,6 +68,8 @@ class TelefonDefter:
             DELETE FROM telefonlar WHERE tel_id = {tel_id}
             """
             self.cur.execute(sorgu)
+            # commit onaylama
+            # rollback gerialma
             self.db.commit()
             return True
         except Exception as hata:
@@ -80,8 +86,8 @@ telefonDefter = TelefonDefter()
 telefonDefter.Listele()
 telefonDefter.Ekleme()
 telefonDefter.Listele()
-tel_id = int(input("Guncellemek icin Kayıt Seç"))
+tel_id = int(input("Kayıt Seç"))
 telefonDefter.Guncelleme(tel_id)
-tel_id = int(input("Silmek icinKayıt Seç"))
+tel_id = int(input("Kayıt Seç"))
 telefonDefter.Silme(tel_id)
 telefonDefter.Listele()

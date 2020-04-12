@@ -42,7 +42,6 @@ class TelefonDefter:
                 print(f"{tel_id}-{adi} {soyadi} {tel_no}")
         except Exception as hata:
             print("Hata Mesajı:",hata)
-    def Gunc
     def __del__(self):
         self.cur.close()
         self.db.commit()
