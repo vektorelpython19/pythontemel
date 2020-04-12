@@ -1,23 +1,33 @@
 from tkinter import *
 
 pencere = Tk()
-pencere.geometry("640x480+200+300")
-etiket = Label(pencere,text="Pythondaki İlk Arayüz Elemanım")
-etiket.grid(column=0,row=0)
-def tiklandi():
-    etiket["text"] = "Butona Tıklandı"
-dugme = Button(pencere,text="Tıkla",command=tiklandi,width=20)
-dugme.grid(column=1,row=0)
+pencere.geometry("600x800+300+300")
 
-def tiklandi2():
-    yazi=txt.get()
-    etiket.configure(text=yazi)
+etiket1=Label(pencere,text="Kullanıcı Adı:",width=40)
+etiket1.grid(column=0,row=0)
+txtUser=Entry(pencere,width=50)
+txtUser.grid(column=1,row=0)
 
-txt = Entry(pencere,width=20)
-txt.grid(column=0,row=1)
+etiket2=Label(pencere,text="Şifre:",width=40)
+etiket2.grid(column=0,row=1)
+txtPass=Entry(pencere,show="*",width=50)
+txtPass.grid(column=1,row=1)
 
-dugme2=Button(pencere,text="Aktar",command=tiklandi2)
-dugme2.grid(column=1,row=0)
+def FonkGiris():
+    if txtUser.get() and txtPass.get():
+        if txtUser.get()=="Komurcu" and txtPass.get()=="12345":
+            print("Giriş Başarılı")
+        else:
+            print("Giriş Başarısız")
+
+
+def Temizle():
+    pass
+
+dugme1 = Button(pencere,text="Giriş Yap",width=30,command=FonkGiris)
+dugme1.grid(column=0,row=2)
+dugme2 = Button(pencere,text="Temizle",width=30,command=Temizle)
+dugme2.grid(column=1,row=2)
 
 pencere.mainloop()
 
