@@ -1,3 +1,8 @@
 {
-    "python.pythonPath": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
+<<<<<<< HEAD
+    "python.pythonPath": "C:\\Users\\LenovoNB\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+    "python.linting.enabled": false
+=======
+    "python.pythonPath": "/Users/yekta/opt/anaconda3/envs/masaustu/bin/python"
+>>>>>>> b853b92fe4e780f155ab66fe1d5466c3641aaca7
 }
