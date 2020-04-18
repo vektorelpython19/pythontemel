@@ -58,7 +58,20 @@ class TelefonDefter:
             return True
         except Exception as hata:
             print("Hata Mesajı:",hata)
-            return False        
+            return False  
+
+    def Silme(self,tel_id):
+        try:
+            sorgu = f"""
+            DELETE FROM telefonlar WHERE tel_id = {tel_id}
+            """
+            self.cur.execute(sorgu)
+            # rollback gerialma
+            self.db.commit()
+            return True
+        except Exception as hata:
+            print("Hata Mesajı:",hata)
+            return False                
 
 
     def __del__(self):
@@ -69,4 +82,9 @@ class TelefonDefter:
 telefonDefter = TelefonDefter()
 telefonDefter.Listele()
 telefonDefter.Ekleme()
+telefonDefter.Listele()
+tel_id = int(input("Kayıt Seç"))
+telefonDefter.Guncelleme(tel_id)
+tel_id = int(input("Kayıt Seç"))
+telefonDefter.Silme(tel_id)
 telefonDefter.Listele()
