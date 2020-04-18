@@ -5,7 +5,7 @@ class Uygulama(QMainWindow):
     def __init__(self):
         super().__init__()
         #1.çağırma
-        uic.loadUi(r"Proje\EDİZ\ilkUI.ui",self)
+        uic.loadUi(r"Proje\Mine\ilkUI.ui",self)
         # self.btGonder
         #2.çağırma
         # self.win = uic.loadUi(r"Proje\EDİZ\ilkUI.ui")
