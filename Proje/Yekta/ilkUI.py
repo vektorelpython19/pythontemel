@@ -7,10 +7,10 @@ class Uygulama(QMainWindow):
     def __init__(self):
         super().__init__()
         # 1.çağırma
-        uic.loadUi(r"/Users/yekta/PycharmProjects/pythontemel/Proje/Yekta/ilkUI.ui",self)
+        uic.loadUi(r"/Users/yekta/PycharmProjects/pythontemel/Proje/Yekta/ilkUIHoca.ui",self)
         # self.btGonder
         # 2.çağırma
-        # self.win = uic.loadUi(r"Proje/Yekta/ilkUI.ui")
+        # self.win = uic.loadUi(r"/Users/yekta/PycharmProjects/pythontemel/Proje/Yekta/ilkUIHoca.ui")
         # self.win.btGonder
         self.Goster()
 
@@ -27,6 +27,7 @@ class Uygulama(QMainWindow):
 
     def aktarim(self):
         self.lbltxt.setText(self.txtUser.text())
+        self.lblcmb.setText(self.cmbSecim.currentText())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
