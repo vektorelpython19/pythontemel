@@ -10,7 +10,7 @@ class Uygulama(QMainWindow):
         uic.loadUi(r"Proje/Yekta/ilkUI.ui", self)
         # self.btGonder
         # 2.çağırma
-        # self.win = uic.loadUi(r"Proje\EDİZ\ilkUI.ui")
+        # self.win = uic.loadUi(r"Proje/Yekta/ilkUI.ui")
         # self.win.btGonder
         self.Goster()
 
