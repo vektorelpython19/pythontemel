@@ -14,9 +14,19 @@ class Uygulama(QMainWindow):
         # self.win.btGonder
         self.Goster()
 
+    def comboDoldur(self):
+        sozluk = {"-1":"Seciniz","1":"Evet","2":"Hayir"}
+        for item in sozluk.values():
+            self.cmbSecim.addItem(item)
+
     def Goster(self):
+        self.btGonder.clicked.connect(self.aktarim)
+        self.comboDoldur()
         self.txtUser.setText("Merhabaaaa")
         self.show()
+
+    def aktarim(self):
+        self.lbltxt.setText(self.txtUser.text())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
