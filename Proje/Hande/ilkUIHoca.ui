@@ -122,11 +122,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QComboBox" name="cmbSecim">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="cmbSecim"/>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_7">
@@ -147,32 +143,8 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuDosya">
-    <property name="title">
-     <string>Dosya</string>
-    </property>
-    <addaction name="dosyaAc"/>
-   </widget>
-   <widget class="QMenu" name="menuYard_m">
-    <property name="title">
-     <string>Yardım</string>
-    </property>
-    <addaction name="hakkinda"/>
-   </widget>
-   <addaction name="menuDosya"/>
-   <addaction name="menuYard_m"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="dosyaAc">
-   <property name="text">
-    <string>Aç</string>
-   </property>
-  </action>
-  <action name="hakkinda">
-   <property name="text">
-    <string>Hakkında</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>
