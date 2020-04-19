@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 sayfa = requests.get("https://raw.githubusercontent.com/vektorelpython19/pythontemel/master/Proje/ED%C4%B0Z/B15_9.html")
 soup = BeautifulSoup(sayfa.content,'html.parser')
-print(soup.find(class_="ikinciDiv"))
+print(soup.find(id="tekbasina"))
 # print(soup.find_all('p')[0].get_text())
 
 # print(sayfa.content) # ED%C4%B0Z
