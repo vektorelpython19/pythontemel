@@ -143,8 +143,32 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuDosya">
+    <property name="title">
+     <string>Dosya</string>
+    </property>
+    <addaction name="dosyaAc"/>
+   </widget>
+   <widget class="QMenu" name="menuYardim">
+    <property name="title">
+     <string>Yardim</string>
+    </property>
+    <addaction name="hakkinda"/>
+   </widget>
+   <addaction name="menuDosya"/>
+   <addaction name="menuYardim"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="dosyaAc">
+   <property name="text">
+    <string>dosyaAc</string>
+   </property>
+  </action>
+  <action name="hakkinda">
+   <property name="text">
+    <string>hakkinda</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
