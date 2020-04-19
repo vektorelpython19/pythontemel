@@ -21,9 +21,18 @@ class Uygulama(QMainWindow):
 
     def Goster(self):
         self.btGonder.clicked.connect(self.aktarim)
+        self.hakkinda.triggered.connect(self.Hakkinda)
+        self.chk1.stateChanged.connect(self.isaret)
+        self.rbd1.toggled.connect(self.isaret)
         self.comboDoldur()
         self.txtUser.setText("Merhabaaaaaa")
         self.show()
+    def isaret(self):
+        rdb = self.sender()
+        if rdb.isChecked():
+            QMessageBox
+    def Hakkında(self):
+        QMessageBox.information(self,"Bilgi","Vektorel Python 19")    
 
     def aktarim(self):
        #---------TextBox--------------
