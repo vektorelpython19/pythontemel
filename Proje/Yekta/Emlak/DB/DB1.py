@@ -2,10 +2,10 @@ import sqlite3 as sql
 
 class DataEmlak:
     def __init__(self):
-        self.db = sql.connect(r"Proje\EDİZ\Emlak\DB\Emlak.db")
+        self.db = sql.connect(r"/Users/yekta/PycharmProjects/pythontemel/Proje/Yekta/Emlak/DB/Emlak.db")
         self.cur = self.db.cursor()
-        # self.ilOlustur()
-        # self.ilceOlustur()
+        self.ilOlustur()
+        self.ilceOlustur()
 
     def ilOlustur(self):
         sorgu = """
@@ -29,12 +29,12 @@ class DataEmlak:
         self.cur.execute(sorgu)
 
     def ilListele(self):
-        sorgu = """ SELECT IL_ID,IL_ADI FROM ST_ILLER """
-        return self.cur.execute(sorgu).fetchall()
+        sorgu = """SELECT IL_ID,IL_ADI FROM ST_ILLER """
+        self.cur.execute(sorgu).fetchall()
     
     def ilceListele(self,ID):
         sorgu = f"""SELECT 
         ST_ILCE_ID,ST_ILCE_ADI 
         FROM ST_ILCELER WHERE ST_IL = {ID}"""
-        return self.cur.execute(sorgu).fetchall()
+        self.cur.execute(sorgu).fetchall()
 
