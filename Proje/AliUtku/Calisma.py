@@ -66,6 +66,7 @@ class TelefonDefter:
             DELETE FROM telefonlar WHERE tel_id = {tel_id}
             """
             self.cur.execute(sorgu)
+            # commit onaylama
             # rollback gerialma
             self.db.commit()
             return True
