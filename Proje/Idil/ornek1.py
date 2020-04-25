@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-sayfa = requests.get("https://raw.githubusercontent.com/vektorelpython19/pythontemel/master/Proje/Hande/Ornek.html")
+sayfa = requests.get("https://raw.githubusercontent.com/vektorelpython19/pythontemel/master/Proje/Hande/B15_9.html")
 soup = BeautifulSoup(sayfa.content,'html.parser')
-print(soup.find_all('p')[0].get_text())
+print(soup.find(id=))
+
 # print(sayfa.content)
 # print(soup.prettify())
 # print(list(soup.children))
