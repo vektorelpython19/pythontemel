@@ -1,15 +1,15 @@
 import sys
-import os
-sys.path.append(os.getcwd()+os.sep+"DB")
+sys.path.append("DB")
 from PyQt5.QtWidgets import QApplication,QMainWindow,QMessageBox
 from PyQt5 import uic
-from DB.DB1 import DataEmlak
+from DB1 import DataEmlak
 
 class Uygulama(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi(r"Proje\EDİZ\Emlak\ProjeUI_1.ui",self)
-        self.dbEmlak = DataEmlak()
+        #1.çağırma
+        uic.loadUi(r"Proje\Idil\Emlak\ProjeUI_1.ui",self)
+        self.db.Emlak =DataEmlak
         self.Goster()
 
     def Goster(self):
@@ -19,9 +19,9 @@ class Uygulama(QMainWindow):
 
     def ilDoldur(self):
         liste = self.dbEmlak.ilListele()
-        self.cmbil.addItem("Seçiniz","-1")
+        self.cmbil.addItem("-1","Seçiniz")
         for item in liste:
-            self.cmbil.addItem(item[1],item[0])
+            self.cmbil.addItem(str(item[0]),item[1])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
