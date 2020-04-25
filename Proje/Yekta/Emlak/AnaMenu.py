@@ -1,8 +1,8 @@
 import sys
-sys.path.append("/Users/yekta/PycharmProjects/pythontemel/Proje/Yekta/Emlak/DB")
+sys.path.append("/Users/yekta/PycharmProjects/pythontemel/")
 from PyQt5.QtWidgets import QApplication,QMainWindow
 from PyQt5 import uic
-from DB.DB1 import DataEmlak
+from Proje.Yekta.Emlak.DB.DB1 import DataEmlak
 
 class Uygulama(QMainWindow):
     def __init__(self):
@@ -18,9 +18,9 @@ class Uygulama(QMainWindow):
 
     def ilDoldur(self):
         liste = self.dbEmlak.ilListele()
-        self.cmbil.addItem("-1","Seçiniz")
+        self.cmbil.addItem("Seçiniz", "-1")
         for item in liste:
-            self.cmbil.addItem(str(item[0]),item[1])
+            self.cmbil.addItem(item[1], item[0])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
