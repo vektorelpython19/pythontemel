@@ -25,16 +25,16 @@ class DataEmlak:
             ST_ILCE_ADI VARCHAR (40) NOT NULL,
             ST_IL       INTEGER      NOT NULL
                                     CONSTRAINT FK_STIL_STILCE REFERENCES ST_ILLER (IL_ID) 
-        )""" 
+        )"""
         self.cur.execute(sorgu)
 
     def ilListele(self):
-        sorgu = """SELECT IL_ID,IL_ADI FROM ST_ILLER """
-        self.cur.execute(sorgu).fetchall()
-    
-    def ilceListele(self,ID):
+        sorgu = """ SELECT IL_ID,IL_ADI FROM ST_ILLER """
+        return self.cur.execute(sorgu).fetchall()
+
+    def ilceListele(self, ID):
         sorgu = f"""SELECT 
         ST_ILCE_ID,ST_ILCE_ADI 
         FROM ST_ILCELER WHERE ST_IL = {ID}"""
-        self.cur.execute(sorgu).fetchall()
+        return self.cur.execute(sorgu).fetchall()
 
