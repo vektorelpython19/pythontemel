@@ -7,9 +7,9 @@ sayfa = requests.get(url, timeout=300,headers=HEADERS)
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(sayfa.content,"html.parser")
 i = 0
-# for item in list(soup.children):
-#     # print(i,type(item))
-#     i += 1 
+for item in list(soup.children):
+    print(i,type(item))
+    i += 1 
 eleman = list(soup.children)[32]
 print(eleman.prettify())
 # for item in eleman:
