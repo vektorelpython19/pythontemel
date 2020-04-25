@@ -1,11 +1,12 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QMainWindow,QRadioButton
+from PyQt5.QtWidgets import QApplication,QMainWindow,QMessageBox
 from PyQt5 import uic
+
 class Uygulama(QMainWindow):
     def __init__(self):
         super().__init__()
         #1.çağırma
-        uic.loadUi(r"Proje\Mine\ilkUI.ui",self)
+        uic.loadUi(r"Proje\EDİZ\ilkUI.ui",self)
         # self.btGonder
         #2.çağırma
         # self.win = uic.loadUi(r"Proje\EDİZ\ilkUI.ui")
@@ -20,9 +21,22 @@ class Uygulama(QMainWindow):
 
     def Goster(self):
         self.btGonder.clicked.connect(self.aktarim)
+        self.hakkinda.triggered.connect(self.Hakkinda)
+        self.chk1.stateChanged.connect(self.isaret)
+        self.rdb1.toggled.connect(self.isaret)
         self.comboDoldur()
         self.txtUser.setText("Merhabaaaaaa")
         self.show()
+
+    def isaret(self):
+        rdb = self.sender()
+        if rdb.isChecked():
+            QMessageBox.information(self,"Bilgi","İşaretledin")
+        else:
+            QMessageBox.warning(self,"Bilgi","İşaretlemedin")
+
+    def Hakkinda(self):
+        QMessageBox.information(self,"Bilgi","Vektorel Python 19")
 
     def aktarim(self):
         #----------TextBox-----------------------
@@ -56,3 +70,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     ex = Uygulama()
     sys.exit(app.exec_())
+
+    
