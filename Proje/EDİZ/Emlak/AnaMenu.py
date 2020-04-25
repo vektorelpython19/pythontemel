@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication,QMainWindow,QMessageBox
 from PyQt5 import uic
+from DB import DataEmlak
 
 class Uygulama(QMainWindow):
     def __init__(self):
