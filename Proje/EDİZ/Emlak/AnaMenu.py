@@ -1,7 +1,9 @@
 import sys
+import os
+sys.path.append(os.getcwd()+os.sep+"DB")
 from PyQt5.QtWidgets import QApplication,QMainWindow,QMessageBox
 from PyQt5 import uic
-from DB import DataEmlak
+from DB1 import DataEmlak
 
 class Uygulama(QMainWindow):
     def __init__(self):
