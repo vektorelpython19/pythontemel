@@ -9,8 +9,12 @@ class Uygulama(QMainWindow):
     def __init__(self):
         super().__init__()
         #1.çağırma
-        uic.loadUi(r"Proje\AliUtku\Emlak\ProjeUT_1.ui",self)
+        uic.loadUi(r"Proje\Mert\Emlak\ProjeUI_1.ui",self)
+        self.Goster()
 
+    def Goster(self):
+        self.prgCekim.setValue(0)
+        self.show()
 
 
 if __name__ == "__main__":
