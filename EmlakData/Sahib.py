@@ -9,11 +9,11 @@ url = f'https://www.sahibinden.com/satilik-daire/ankara-cankaya?pagingOffset=0'
 sayfa = requests.get(url, timeout=300,headers=HEADERS)
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(sayfa.content,"html.parser")
-# liste = soup.findAll("div",class_="result-text")
+liste = soup.findAll("div",class_="result-text")
 
 # print(list(liste)[0].span)
-for item in soup.div.find_all_next("span"):
-    print(item)
+for item in liste:
+    print(item.text)
 
 #     liste2 = soup.findAll("td",class_="searchResultsAttributeValue")
 #     liste3 = soup.findAll("td",class_="searchResultsPriceValue")

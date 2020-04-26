@@ -3,7 +3,6 @@ import requests
 import os 
 import datetime
 import time
-sys.path.append(os.getcwd()+os.sep+"DB")
 from PyQt5.QtWidgets import QApplication,QMainWindow,QMessageBox
 from PyQt5 import uic
 from DB.DB1 import DataEmlak
