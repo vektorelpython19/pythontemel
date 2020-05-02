@@ -2,7 +2,7 @@ import sqlite3 as sql
 
 class DataEmlak:
     def __init__(self):
-        self.db = sql.connect(r"Proje\EDİZ\Emlak\DB\Emlak.db")
+        self.db = sql.connect(r"Proje\Idil\Emlak\DB\Emlak.db")
         self.cur = self.db.cursor()
         # self.ilOlustur()
         # self.ilceOlustur()
