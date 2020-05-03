@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 cap = cv2.VideoCapture(1)
-
+fgbg = cv2.createBackgroundSubtractorMOG2()
 while True:
     ret,frame = cap.read()
     #-----------------------------
@@ -14,14 +14,18 @@ while True:
     # mask = cv2.inRange(hsv,dusuk_renk,yuksek_renk)
     # res = cv2.bitwise_and(frame,frame,mask=mask)
     #-----------------------------
-    kernel = np.ones((15,15),np.float32)/225
-    smoothed = cv2.filter2D(frame,-1,kernel)
-    blur = cv2.GaussianBlur(frame,(15,15),-2)
-    medBlur = cv2.medianBlur(frame,15)
-    bilateral = cv2.bilateralFilter(frame,15,75,75)
+    # kernel = np.ones((15,15),np.float32)/225
+    # smoothed = cv2.filter2D(frame,-1,kernel)
+    # blur = cv2.GaussianBlur(frame,(15,15),-2)
+    # medBlur = cv2.medianBlur(frame,15)
+    # bilateral = cv2.bilateralFilter(frame,15,75,75)
+    # cv2.imshow('Frame',frame)
+    # cv2.imshow('Frame2',smoothed)
+    # cv2.imshow('Frame3',bilateral)
+    #---------------------------------------
+    fgmask = fgbg.apply(frame)
     cv2.imshow('Frame',frame)
-    cv2.imshow('Frame2',smoothed)
-    cv2.imshow('Frame3',bilateral)
+    cv2.imshow('Frame2',fgmask)    
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
